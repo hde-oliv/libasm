@@ -3,10 +3,15 @@ section .text
 
 ft_strcmp:
     mov rax, 0
+    mov rbx, 0
+    mov rcx, 0
 
 compare_loop:
     mov bl, [rdi]
     mov cl, [rsi]
+
+    cmp bl, cl
+    jne calculate_difference
 
     cmp bl, 0
     je calculate_difference
@@ -14,17 +19,14 @@ compare_loop:
     cmp cl, 0
     je calculate_difference
 
-    cmp bl, cl
-    jne calculate_difference
-
     inc rdi
     inc rsi
 
     jmp compare_loop
 
 calculate_difference:
-    sub bl, cl
-    mov rax, bl
+    sub rbx, rcx
+    mov rax, rbx
     jmp end
 
 end:

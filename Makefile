@@ -1,4 +1,4 @@
-SRC		:=	ft_write.s ft_strlen.s ft_strcpy.s
+SRC		:=	ft_write.s ft_strlen.s ft_strcpy.s ft_strcmp.s ft_strdup.s
 
 INC_DIR :=	includes
 SRC_DIR :=	srcs
@@ -32,6 +32,7 @@ obj:
 
 clean:
 			$(RM) $(OBJS) $(OBJ_DIR)
+			$(RM) tests.out
 
 fclean: 	clean
 			$(RM) $(NAME)
