@@ -43,7 +43,7 @@ error:
     mov rsi, rax
     call [rel __errno_location wrt ..got]
     mov [rax], rsi
-    mov rax, -1
+    mov rax, 0
     ret
 
 end:
